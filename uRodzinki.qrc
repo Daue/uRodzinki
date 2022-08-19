@@ -5,4 +5,42 @@
         <file>qml/PersonDelegate.qml</file>
         <file>js/Utils.js</file>
     </qresource>
+    <qresource prefix="/img">
+        <file>res/avatar/Agu.jpg</file>
+        <file>res/avatar/Ania.jpg</file>
+        <file>res/avatar/Ania2.jpg</file>
+        <file>res/avatar/Antoni.jpg</file>
+        <file>res/avatar/Asia.jpg</file>
+        <file>res/avatar/Bob.jpg</file>
+        <file>res/avatar/Dave.jpg</file>
+        <file>res/avatar/Dawidek.jpg</file>
+        <file>res/avatar/Dorota.jpg</file>
+        <file>res/avatar/Emi.jpg</file>
+        <file>res/avatar/Esti.jpg</file>
+        <file>res/avatar/Gajda.jpg</file>
+        <file>res/avatar/Ines.jpg</file>
+        <file>res/avatar/Jadzia.jpg</file>
+        <file>res/avatar/Jagoda.jpg</file>
+        <file>res/avatar/Jozio.jpg</file>
+        <file>res/avatar/Julia.jpg</file>
+        <file>res/avatar/Kamil.jpg</file>
+        <file>res/avatar/Kinga.jpg</file>
+        <file>res/avatar/Kinia.jpg</file>
+        <file>res/avatar/Krain.jpg</file>
+        <file>res/avatar/Kris.jpg</file>
+        <file>res/avatar/Lesio.jpg</file>
+        <file>res/avatar/Lucy.jpg</file>
+        <file>res/avatar/Mewa.jpg</file>
+        <file>res/avatar/Michal.jpg</file>
+        <file>res/avatar/Mimi.jpg</file>
+        <file>res/avatar/Miro.jpg</file>
+        <file>res/avatar/Monika.jpg</file>
+        <file>res/avatar/Nero.jpg</file>
+        <file>res/avatar/Pablo.jpg</file>
+        <file>res/avatar/Pytel.jpg</file>
+        <file>res/avatar/Samara.jpg</file>
+        <file>res/avatar/Unknown.jpg</file>
+        <file>res/avatar/Wera.jpg</file>
+        <file>res/window_icon.ico</file>
+    </qresource>
 </RCC>

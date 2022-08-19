@@ -21,7 +21,7 @@ ApplicationWindow {
         delegate: PersonDelegate {
             personName: name
             personBornDate: Utils.formatDate( Utils.dateFromString( born ) )
-            personImage: Qt.resolvedUrl(image)
+            personImage: ("qrc:/img/res/avatar/" + image)
         }
     }
 }
