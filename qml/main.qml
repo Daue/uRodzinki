@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
-import "../js/Utils.js" as Utils
+
+import org.dave 1.0
 
 ApplicationWindow {
 
@@ -9,19 +10,17 @@ ApplicationWindow {
     visible: true
     color: "#eaeaea"
 
-    //header: Header{}
-
     ListView {
         anchors.fill: parent
         spacing: 5
         anchors.margins: 10
 
-        model: DataModel{}
+        model: PersonsModel{}
 
         delegate: PersonDelegate {
-            personName: name
-            personBornDate: Utils.formatDate( Utils.dateFromString( born ) )
-            personImage: ("qrc:/img/res/avatar/" + image)
+            personName: model.name
+            personBornDate: model.birthday
+            personImage: ("qrc:/img/res/avatar/" + model.icon)
         }
     }
 }

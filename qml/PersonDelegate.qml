@@ -41,7 +41,6 @@ Item {
                 anchors.left: parent.left
                 anchors.top: parent.top
                 anchors.margins: 8
-                source: "pics/Nero.jpg"
             }
 
             Text {

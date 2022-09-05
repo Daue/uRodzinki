@@ -1,16 +1,15 @@
-QT += quick quickcontrols2
+QT += quick quickcontrols2 core
 
 SOURCES += \
-        src/main.cpp
+        src/main.cpp \
+        src/persons_model.cpp
 
 RESOURCES += \
 	uRodzinki.qrc
 
 OTHER_FILES = \
 	qml/main.qml \
-	qml/DataModel.qml \
 	qml/PersonDelegate.qml \
-	js/Utils.js
 
 DISTFILES += \
 	android/AndroidManifest.xml \
@@ -21,7 +20,6 @@ DISTFILES += \
 	android/gradlew \
 	android/gradlew.bat \
 	android/res/values/libs.xml \
-	res/avatar/Dave.jpg
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -34,5 +32,8 @@ contains(ANDROID_TARGET_ARCH,arm64-v8a) {
 	ANDROID_PACKAGE_SOURCE_DIR = \
 		$$PWD/android
 }
+
+HEADERS += \
+	src/persons_model.hpp
 
 

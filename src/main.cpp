@@ -2,29 +2,18 @@
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
 
+#include <src/persons_model.hpp>
+
 int main(int argc, char *argv[])
 {
 	QGuiApplication app(argc, argv);
 
 	QQuickStyle::setStyle("Material");
 
+	qmlRegisterType< PersonsModel >( "org.dave", 1, 0, "PersonsModel" );
+
 	QQmlApplicationEngine engine;
-
-	const QUrl url("qrc:/qml/main.qml");
-
-	QObject::connect(
-				  &engine
-				, &QQmlApplicationEngine::objectCreated
-				, &app
-				, [ url ]( QObject *obj, const QUrl &objUrl )
-					{
-						if (!obj && url == objUrl)
-							QCoreApplication::exit(-1);
-					}
-				, Qt::QueuedConnection
-				);
-
-	engine.load(url);
+	engine.load("qrc:/qml/main.qml");
 
 	return app.exec();
 }

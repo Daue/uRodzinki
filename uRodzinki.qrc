@@ -1,9 +1,7 @@
 <RCC>
     <qresource prefix="/">
-        <file>qml/DataModel.qml</file>
         <file>qml/main.qml</file>
         <file>qml/PersonDelegate.qml</file>
-        <file>js/Utils.js</file>
     </qresource>
     <qresource prefix="/img">
         <file>res/avatar/Agu.jpg</file>
