@@ -1,8 +1,13 @@
 QT += quick quickcontrols2 core
 
+HEADERS += \
+	src/persons_model.hpp \
+	src/sort_model.hpp
+
 SOURCES += \
         src/main.cpp \
-        src/persons_model.cpp
+        src/persons_model.cpp \
+        src/sort_model.cpp
 
 RESOURCES += \
 	uRodzinki.qrc
@@ -32,8 +37,5 @@ contains(ANDROID_TARGET_ARCH,arm64-v8a) {
 	ANDROID_PACKAGE_SOURCE_DIR = \
 		$$PWD/android
 }
-
-HEADERS += \
-	src/persons_model.hpp
 
 

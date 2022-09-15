@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 
-import org.dave 1.0
+//import org.dave 1.0
 
 ApplicationWindow {
 
@@ -15,12 +15,13 @@ ApplicationWindow {
         spacing: 5
         anchors.margins: 10
 
-        model: PersonsModel{}
+        model: personsModel
 
         delegate: PersonDelegate {
             personName: model.name
             personBornDate: model.birthday
             personImage: ("qrc:/img/res/avatar/" + model.icon)
+            personYearsOld: model.yearsOld
         }
     }
 }

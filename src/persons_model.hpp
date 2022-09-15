@@ -16,6 +16,7 @@ enum RoleType
 	  Name = Qt::UserRole
 	, Birthday = Qt::UserRole + 1
 	, Icon = Qt::UserRole + 2
+	, YearsOld = Qt::UserRole + 3
 };
 
 class PersonsModel
@@ -33,6 +34,7 @@ public:
 private:
 	QString getPersonDate( Person const& _person ) const;
 	int getPersonYears( Person const& _person ) const;
+	int getPersonDaysToBirthday( Person const& _person ) const;
 
 private:
 	QVector< Person > m_persons;

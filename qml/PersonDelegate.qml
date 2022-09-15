@@ -5,6 +5,7 @@ Item {
     property alias personName: name.text
     property alias personBornDate: born.text
     property alias personImage: image.source
+    property alias personYearsOld: yearsOld.text
     signal click;
 
     id: root
@@ -60,6 +61,15 @@ Item {
                 anchors.topMargin: 7
                 text: "20 marzec (2002)"
             }
+
+            Text {
+                id: yearsOld
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                anchors.margins: 8
+                text: "Lat: "
+            }
+
         }
 
         MouseArea {
@@ -69,3 +79,9 @@ Item {
 
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;width:400}
+}
+##^##*/

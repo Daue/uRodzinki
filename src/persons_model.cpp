@@ -81,6 +81,8 @@ PersonsModel::data( QModelIndex const& _index, int _role ) const
 			return getPersonDate( person );
 		case RoleType::Icon:
 			return person.m_iconName;
+		case RoleType::YearsOld:
+			return getPersonYears( person );
 	}
 
 	return QVariant();
@@ -94,6 +96,7 @@ PersonsModel::roleNames() const
 			  { RoleType::Name, "name" }
 			, { RoleType::Birthday, "birthday" }
 			, { RoleType::Icon, "icon" }
+			, { RoleType::YearsOld, "yearsOld" }
 		};
 
 	return roleNames;
@@ -117,11 +120,10 @@ PersonsModel::getPersonDate( Person const& _person ) const
 	  , "Grudzień"
 	};
 
-	QString date = QString("%1 %2 %3 [%4]")
+	QString date = QString("%1 %2 %3")
 			.arg( _person.m_date.day() )
 			.arg( months[ _person.m_date.month() - 1 ] )
 			.arg( _person.m_date.year() )
-			.arg( getPersonYears( _person) )
 			;
 
 	return date;
@@ -141,4 +143,18 @@ PersonsModel::getPersonYears(const Person &_person) const
 		diffrent -= 1;
 
 	return diffrent;
+}
+
+int
+PersonsModel::getPersonDaysToBirthday( Person const& _person ) const
+{
+	QDate currentDate = QDate::currentDate();
+	QDate date = _person.m_date;
+
+	date.setDate( currentDate.year(), date.month(), date.day() );
+
+	if ( currentDate > date )
+		date = date.addYears( 1 );
+
+	return currentDate.daysTo( date );
 }
