@@ -48,11 +48,11 @@ PersonsModel::PersonsModel( QObject* _parent )
 	add( "Szymon Stasiak", "2019-04-20", "Unknown.jpg" );
 	add( "Marcel Stasiak", "2021-05-25", "Unknown.jpg" );
 	add( "Babcia Lucy", "1920-06-30", "Lucy.jpg" );
-	add( "Emilia Klimczyk", "2020-02-13", "Unknown.jpg" );
+	add( "Emilia Klimczyk", "2020-02-13", "Emilka.jpg" );
 	add( "Ester Świątkowska", "2020-07-06", "Esti.jpg" );
 	add( "Nero", "2020-04-01", "Nero.jpg" );
 	add( "Asia Kowalik", "1987-08-20", "Asia.jpg" );
-	add( "Tadzik Kloszczyk", "2022-08-30", "Unknown.jpg" );
+	add( "Tadzik Kloszczyk", "2022-08-30", "Tadzik.jpg" );
 }
 
 int

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Qobject>
+#include <QObject>
 
 class PersonRole
 		: public QObject
@@ -18,7 +18,7 @@ public:
 		, Raw = Qt::UserRole + 4
 		, DaysToBirthday = Qt::UserRole + 5
 	};
-	Q_ENUMS( Type )
+	Q_ENUM( Type )
 };
 
 

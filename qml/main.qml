@@ -37,7 +37,7 @@ ApplicationWindow {
             id: menuButton
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            icon.source: "qrc:/icon/res/menu.svg"
+            icon.source: "qrc:/icon/res/menu.png"
             onClicked: drawer.open()
         }
     }

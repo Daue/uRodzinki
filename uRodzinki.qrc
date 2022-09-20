@@ -41,8 +41,10 @@
         <file>res/avatar/Unknown.jpg</file>
         <file>res/avatar/Wera.jpg</file>
         <file>res/window_icon.ico</file>
+        <file>res/avatar/Emilka.jpg</file>
+        <file>res/avatar/Tadzik.jpg</file>
     </qresource>
     <qresource prefix="/icon">
-        <file>res/menu.svg</file>
+        <file>res/menu.png</file>
     </qresource>
 </RCC>
