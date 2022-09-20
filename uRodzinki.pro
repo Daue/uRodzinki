@@ -1,11 +1,14 @@
 QT += quick quickcontrols2 core
 
 HEADERS += \
+	src/person.hpp \
+	src/person_role_type.hpp \
 	src/persons_model.hpp \
 	src/sort_model.hpp
 
 SOURCES += \
         src/main.cpp \
+        src/person.cpp \
         src/persons_model.cpp \
         src/sort_model.cpp
 
@@ -13,8 +16,9 @@ RESOURCES += \
 	uRodzinki.qrc
 
 OTHER_FILES = \
+	qml/SortSettings.qml \
 	qml/main.qml \
-	qml/PersonDelegate.qml \
+	qml/PersonDelegate.qml
 
 DISTFILES += \
 	android/AndroidManifest.xml \

@@ -5,7 +5,7 @@ Item {
     property alias personName: name.text
     property alias personBornDate: born.text
     property alias personImage: image.source
-    property alias personYearsOld: yearsOld.text
+    property int personYearsOld
     signal click;
 
     id: root
@@ -59,6 +59,7 @@ Item {
                 anchors.top: name.bottom
                 anchors.left: name.left
                 anchors.topMargin: 7
+                font.pixelSize: 13
                 text: "20 marzec (2002)"
             }
 
@@ -67,7 +68,8 @@ Item {
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
                 anchors.margins: 8
-                text: "Lat: "
+                text: personYearsOld
+                font.italic: true
             }
 
         }

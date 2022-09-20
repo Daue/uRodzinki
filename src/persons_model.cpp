@@ -75,14 +75,18 @@ PersonsModel::data( QModelIndex const& _index, int _role ) const
 
 	switch( _role )
 	{
-		case RoleType::Name:
+		case PersonRole::Name:
 			return person.m_name;
-		case RoleType::Birthday:
-			return getPersonDate( person );
-		case RoleType::Icon:
+		case PersonRole::Birthday:
+			return getPersonUserFriendlyDate( person );
+		case PersonRole::Icon:
 			return person.m_iconName;
-		case RoleType::YearsOld:
+		case PersonRole::YearsOld:
 			return getPersonYears( person );
+		case PersonRole::Raw:
+			return QVariant::fromValue( person );
+		case PersonRole::DaysToBirthday:
+			return getPersonDaysToBirthday( person );
 	}
 
 	return QVariant();
@@ -93,68 +97,11 @@ QHash< int, QByteArray >
 PersonsModel::roleNames() const
 {
 	static QHash< int, QByteArray > roleNames = {
-			  { RoleType::Name, "name" }
-			, { RoleType::Birthday, "birthday" }
-			, { RoleType::Icon, "icon" }
-			, { RoleType::YearsOld, "yearsOld" }
+			  { PersonRole::Name, "name" }
+			, { PersonRole::Birthday, "birthday" }
+			, { PersonRole::Icon, "icon" }
+			, { PersonRole::YearsOld, "yearsOld" }
 		};
 
 	return roleNames;
-}
-
-QString
-PersonsModel::getPersonDate( Person const& _person ) const
-{
-	const QStringList months = {
-		"Styczeń"
-	  , "Luty"
-	  , "Marzec"
-	  , "Kwiecień"
-	  , "Maj"
-	  , "Czerwiec"
-	  , "Lipiec"
-	  , "Sierpień"
-	  , "Wrzesień"
-	  , "Październik"
-	  , "Listopad"
-	  , "Grudzień"
-	};
-
-	QString date = QString("%1 %2 %3")
-			.arg( _person.m_date.day() )
-			.arg( months[ _person.m_date.month() - 1 ] )
-			.arg( _person.m_date.year() )
-			;
-
-	return date;
-}
-
-int
-PersonsModel::getPersonYears(const Person &_person) const
-{
-	QDate currentDate = QDate::currentDate();
-	QDate date = _person.m_date;
-
-	int diffrent = currentDate.year() - date.year();
-
-	if ( currentDate.month() < date.month() )
-		diffrent -= 1;
-	else if ( currentDate.month() == date.month() && currentDate.day() < date.day() )
-		diffrent -= 1;
-
-	return diffrent;
-}
-
-int
-PersonsModel::getPersonDaysToBirthday( Person const& _person ) const
-{
-	QDate currentDate = QDate::currentDate();
-	QDate date = _person.m_date;
-
-	date.setDate( currentDate.year(), date.month(), date.day() );
-
-	if ( currentDate > date )
-		date = date.addYears( 1 );
-
-	return currentDate.daysTo( date );
 }

@@ -5,6 +5,7 @@
 
 #include <src/persons_model.hpp>
 #include <src/sort_model.hpp>
+#include <src/person.hpp>
 
 int main(int argc, char *argv[])
 {
@@ -15,12 +16,12 @@ int main(int argc, char *argv[])
 	PersonsModel model;
 
 	SortModel sortModel;
-	//sortModel.setDynamicSortFilter( true );
-	//sortModel.setFilterRole( RoleType::Name );
-	//sortModel.setFilterFixedString( "Jagoda" );
 	sortModel.setSourceModel( &model );
+	sortModel.setSortRole( PersonRole::DaysToBirthday );
+	sortModel.sort( 0 );
 
 	//qmlRegisterType< PersonsModel >( "org.dave", 1, 0, "PersonsModel" );
+	qmlRegisterType< PersonRole >("person", 1,0, "PersonRole" );
 
 	QQmlApplicationEngine engine;
 	engine.rootContext()->setContextProperty( "personsModel", &sortModel );
